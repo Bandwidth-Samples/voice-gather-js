@@ -1,4 +1,4 @@
-# Repo Title REPLACE
+# Voice Gather Sample App
 <a href="http://dev.bandwidth.com"><img src="https://s3.amazonaws.com/bwdemos/BW-VMP.png"/></a>
 </div>
 
@@ -6,7 +6,7 @@
 
 <!-- TOC -->
 
-- [Repo Title REPLACE](#repo-title-replace)
+- [Voice Gather Sample App](#voice-gather-sample-app)
 - [Description](#description)
 - [Bandwidth](#bandwidth)
 - [Environmental Variables](#environmental-variables)
@@ -16,7 +16,7 @@
 <!-- /TOC -->
 
 # Description
-A short description of your sample app and its capabilities. 
+This Sample app creates a call and when the phone number answers it begins a [Gather BXML](https://dev.bandwidth.com/voice/bxml/verbs/gather.html) verb.  Allowing the calle to select an option either 1 or 2 to hear different messages.
 
 # Bandwidth
 
@@ -34,7 +34,6 @@ BANDWIDTH_USERNAME                   // Your Bandwidth API Token
 BANDWIDTH_PASSWORD                   // Your Bandwidth API Secret
 BANDWIDTH_PHONE_NUMBER                // Your The Bandwidth Phone Number
 BANDWIDTH_VOICE_APPLICATION_ID       // Your Voice Application Id created in the dashboard
-BANDWIDTH_MESSAGING_APPLICATION_ID   // Your Messaging Application Id created in the dashboard
 PORT                                 // The port number you wish to run the sample on
 ```
 
@@ -43,8 +42,9 @@ PORT                                 // The port number you wish to run the samp
 For a detailed introduction to Bandwidth Callbacks see https://dev.bandwidth.com/guides/callbacks/callbacks.html
 
 Below are the callback paths:
-* `/callbacks/voiceCallback`
-* `<add other callbacks>`
+* `/calls`                     - POST to create a call to a phone number specified
+* `/callbacks/voiceCallback`   - Bandwidth will POST a callback to this endpoint (setup in https://dashboard.bandwidth.com)
+* `/callbacks/gatherCallback`  - Bandwidth will POST a callback here once the Gather has finished.
 
 ## Ngrok
 
