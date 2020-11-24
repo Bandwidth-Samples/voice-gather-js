@@ -1,3 +1,4 @@
+require('dotenv').config()
 import { Client, ApiController, Response, SpeakSentence, Gather } from '@bandwidth/voice'
 import express from 'express'
 
@@ -5,7 +6,7 @@ const app = express()
 app.use(express.json())
 
 const accountId = process.env.BANDWIDTH_ACCOUNT_ID
-const applicationId = process.env.BANDWIDTH_MESSAGING_APPLICATION_ID
+const applicationId = process.env.BANDWIDTH_VOICE_APPLICATION_ID
 const bwPhoneNumber = process.env.BANDWIDTH_PHONE_NUMBER
 const port = process.env.PORT
 const baseUrl = process.env.BASE_URL
@@ -48,7 +49,6 @@ const controller = new ApiController(client)
 app.post('/calls', async (req, res) => {
 
     const to = req.body.to 
-    const text = req.body.message  
 
     try {
         const response = await controller.createCall(accountId, {
