@@ -16,7 +16,7 @@
 <!-- /TOC -->
 
 # Description
-This Sample app creates a call and when the phone number answers it begins a [Gather BXML](https://dev.bandwidth.com/voice/bxml/verbs/gather.html) verb.  Allowing the calle to select an option either 1 or 2 to hear different messages.
+This sample app creates an outbound call to the Bandwidth Phone Number, and if answered will prompt the user using [Gather BXML](https://dev.bandwidth.com/voice/bxml/verbs/gather.html) to select between a list of options to hear different messages played back.
 
 # Bandwidth
 
