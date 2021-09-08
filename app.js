@@ -31,7 +31,7 @@ if (!password){
 
 console.log(`Enviroment variables set to:
     accountId: ${accountId}
-    pplicationId: ${applicationId}
+    applicationId: ${applicationId}
     phone number: ${bwPhoneNumber}
     port: ${port}
     baseUrl: ${baseUrl}`);
