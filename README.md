@@ -28,13 +28,13 @@ For more information about API credentials see [here](https://dev.bandwidth.com/
 
 # Environmental Variables
 The sample app uses the below environmental variables.
-```java
-BANDWIDTH_ACCOUNT_ID                 // Your Bandwidth Account Id
-BANDWIDTH_USERNAME                   // Your Bandwidth API Token
-BANDWIDTH_PASSWORD                   // Your Bandwidth API Secret
-BANDWIDTH_PHONE_NUMBER                // Your The Bandwidth Phone Number
-BANDWIDTH_VOICE_APPLICATION_ID       // Your Voice Application Id created in the dashboard
-PORT                                 // The port number you wish to run the sample on
+```sh
+BW_ACCOUNT_ID                        # Your Bandwidth Account Id
+BW_USERNAME                          # Your Bandwidth API Username
+BW_PASSWORD                          # Your Bandwidth API Password
+BW_VOICE_APPLICATION_ID              # Your Voice Application Id created in the dashboard
+BW_NUMBER                            # The Bandwidth phone number involved with this application
+LOCAL_PORT                           # The port number you wish to run the sample on
 ```
 
 # Callback URLs
@@ -42,15 +42,15 @@ PORT                                 // The port number you wish to run the samp
 For a detailed introduction to Bandwidth Callbacks see https://dev.bandwidth.com/guides/callbacks/callbacks.html
 
 Below are the callback paths:
-* `/calls`                     - POST to create a call to a phone number specified
-* `/callbacks/voiceCallback`   - Bandwidth will POST a callback to this endpoint (setup in https://dashboard.bandwidth.com)
-* `/callbacks/gatherCallback`  - Bandwidth will POST a callback here once the Gather has finished.
+* `/calls`                          - POST to create a call to a phone number specified
+* `/callbacks/outbound/voice`       - Bandwidth will POST a callback to this endpoint (setup in https://dashboard.bandwidth.com)
+* `/callbacks/outbound/gather`      - Bandwidth will POST a callback here once the Gather has finished.
 
 ## Ngrok
 
 A simple way to set up a local callback URL for testing is to use the free tool [ngrok](https://ngrok.com/).  
-After you have downloaded and installed `ngrok` run the following command to open a public tunnel to your port (`$PORT`)
+After you have downloaded and installed `ngrok` run the following command to open a public tunnel to your port (`$LOCAL_PORT`)
 ```cmd
-ngrok http $PORT
+ngrok http $LOCAL_PORT
 ```
-You can view your public URL at `http://127.0.0.1:{PORT}` after ngrok is running.  You can also view the status of the tunnel and requests/responses here.
+You can view your public URL at `http://127.0.0.1:{LOCAL_PORT}` after ngrok is running.  You can also view the status of the tunnel and requests/responses here.
