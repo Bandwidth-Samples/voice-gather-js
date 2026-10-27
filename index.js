@@ -49,7 +49,7 @@ app.post('/calls', async (req, res) => {
         return res.sendStatus(500);
     }
 
-    res.sendStatus(200);
+    res.sendStatus(204);
 });
 
 app.post('/callbacks/outbound/voice', async (req, res) => {
